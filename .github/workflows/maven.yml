@@ -38,4 +38,4 @@ jobs:
           echo "MY_SECRET=${{ secrets.TESTING }}" >> $GITHUB_ENV
           
     - name: Display secret
-      run: echo $MY_SECRET
+      run: echo ${{ env.MY_SECRET }}
