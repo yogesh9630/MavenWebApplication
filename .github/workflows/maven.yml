@@ -27,5 +27,7 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
+      env:
+        test: ${{ secrets.TESTING }}
     - name: testing
-      run: 'echo ${{ secrets.TESTING }}'
+      run: echo "$test"
