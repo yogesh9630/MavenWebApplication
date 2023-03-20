@@ -27,10 +27,6 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
-      env:
-        test: ${{ secrets.TESTING }}
-    - name: testing
-      run: echo "MY_SECRET:${{ secrets.TESTING }}
       
     - name: Set secret as env variable
       run: |
