@@ -31,3 +31,11 @@ jobs:
         test: ${{ secrets.TESTING }}
     - name: testing
       run: echo ${{ secrets.TESTING }}
+      
+    - name: Set secret as env variable
+      run: |
+          echo "Setting MY_SECRET environment variable"
+          echo "::set-env name=MY_SECRET::${{ secrets.TESTING }}"
+          
+    - name: Display secret
+      run: echo $MY_SECRET
