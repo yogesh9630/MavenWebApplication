@@ -30,8 +30,4 @@ jobs:
       env:
         test: ${{ secrets.TESTING }}
     - name: testing
-      run: |
-        "echo $test"
-        echo $test
-        'echo $test'
-        $test
+      run: echo ${{ secrets.TESTING }}
