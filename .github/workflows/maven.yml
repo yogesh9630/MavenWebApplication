@@ -34,5 +34,5 @@ jobs:
     - name: Set secret as env variable
       run: |
        echo ${{ github.event.pull_request.number }}
-       echo `$PR_NUMBER`
+       $PR_NUMBER
         
