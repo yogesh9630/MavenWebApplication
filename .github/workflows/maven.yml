@@ -35,6 +35,6 @@ jobs:
     - name: Set secret as env variable
       run: |
           echo "Setting MY_SECRET environment variable"
-          echo "::set-env name=MY_SECRET::${{ secrets.TESTING }}"
-          echo "MY_SECRET=${{ secrets.MY_SECRET }}"
+          echo "::set-env name=MY_SECRET::${{secrets.TESTING}}"
+          echo "MY_SECRET=${{secrets.MY_SECRET}}"
           echo "MY_SECRET environment variable value: $MY_SECRET"
