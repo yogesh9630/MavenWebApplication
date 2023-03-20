@@ -30,9 +30,8 @@ jobs:
       
       env:
         PR_NUMBER: ${{ github.event.pull_request.number }}
-      
-    - name: Set secret as env variable
-      run: |
-       echo ${{ github.event.pull_request.number }}
-       $PR_NUMBER
+    
+    - name: publish HTML report
+      run: sh scripts/ci-e2e-publish.sh
+      continue-on-error: true
         
