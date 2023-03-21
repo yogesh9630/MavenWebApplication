@@ -28,11 +28,12 @@ jobs:
         distribution: 'temurin'
         cache: maven
       
-     # env:
-      #  PR_NUMBER: ${{ github.event.pull_request.number }}
     
     - name: Set Pull Request Number
-      run: echo "pull_request_number=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
+      run: |
+       echo "build_number=${{ github.run_number }}" >> $GITHUB_ENV
+       echo "pull_request_number=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
+      
     - name: Run Shell Script
       run: |
        sh my-script.sh
