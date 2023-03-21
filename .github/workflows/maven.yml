@@ -27,13 +27,22 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
+        
+      env:
+        BRANCH_NAME: ${{ github.ref }}
+
       
-    - name: Set secret as env variable
+    - name: Run Shell Script
       run: |
-          docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_TEMP }}
-          docker login
-          echo "{{ vars.VARIABLE }}"
-          echo "Setting MY_SECRET environment variable"
-          echo "::set-env name=MY_SECRET::${{secrets.TESTING}}"
-          echo "MY_SECRET=${{secrets.MY_SECRET}}"
-          echo "MY_SECRET environment variable value: $MY_SECRET"
+       sh testing.sh
+       pwd
+       ls -l
+       cat testing.sh
+       
+    - name: Print Docker secret username
+      run: echo ${{ secrets.DOCKER_USERNAME }}
+       
+    - name: Dokcer login
+      run: |
+       docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+       echo ${{ secrets.DOCKER_USERNAME }}
