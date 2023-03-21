@@ -27,13 +27,17 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
-      
+        
+      env:
+        BRANCH_NAME: ${{ basename(github.ref) }}
     
     - name: Set Pull Request Number
       run: |
        echo "build_number=${{ github.run_number }}" >> $GITHUB_ENV
        echo "pull_request_number=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
-       echo "BRANCH_NAME=${{ basename(github.ref) }}" >> $GITHUB_ENV
+       echo $BRANCH_NAME
+
+
 
       
     - name: Run Shell Script
