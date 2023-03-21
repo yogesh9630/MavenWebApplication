@@ -37,7 +37,7 @@ jobs:
        echo "pull_request_number=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
        echo "BRANCH_NAME=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
        echo "Branch name is ${GITHUB_HEAD_REF}"
-       if: github.event.pull_request.merged == true
+       #if: github.event.pull_request.merged == true
 
 
 
