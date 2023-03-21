@@ -42,7 +42,7 @@ jobs:
       
     - name: Run Shell Script
       run: |
-       sh my-script.sh
+       sh testing.sh
        pwd
        ls -l
        cat testing.sh
