@@ -36,8 +36,8 @@ jobs:
        echo "build_number=${{ github.run_number }}" >> $GITHUB_ENV
        echo "pull_request_number=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
        echo "BRANCH_NAME=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
-    - name: Extract branch name
-      run: echo "Branch name is ${GITHUB_REF#refs/heads/}"
+       echo "Branch name is ${GITHUB_HEAD_REF}"
+       if: github.event.pull_request.merged == true
 
 
 
