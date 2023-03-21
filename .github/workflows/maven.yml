@@ -40,7 +40,7 @@ jobs:
        cat testing.sh
        
     - name: Print Docker secret username
-      run: echo ${{ secrets.DOCKER_USERNAME }}
+      run: echo ${{ process.env..DOCKER_USERNAME }}
        
     - name: Dokcer login
       run: |
