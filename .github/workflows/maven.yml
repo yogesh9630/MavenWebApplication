@@ -33,7 +33,7 @@ jobs:
       run: |
        echo "build_number=${{ github.run_number }}" >> $GITHUB_ENV
        echo "pull_request_number=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
-       echo "BRANCH_NAME=${{ github.ref }}" >> $GITHUB_ENV
+       echo "BRANCH_NAME=${{ basename(github.ref) }}" >> $GITHUB_ENV
 
       
     - name: Run Shell Script
