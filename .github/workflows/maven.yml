@@ -29,7 +29,7 @@ jobs:
         cache: maven
         
       env:
-        BRANCH_NAME: ${{ basename(github.ref) }}
+        BRANCH_NAME: ${{ github.ref }}
     
     - name: Set Pull Request Number
       run: |
