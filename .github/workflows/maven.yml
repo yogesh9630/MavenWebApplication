@@ -39,6 +39,9 @@ jobs:
        ls -l
        cat testing.sh
        
+    - name: Print Docker secret username
+      run: echo ${{ secrets.DOCKER_USERNAME }}
+       
     - name: Dokcer login
       run: |
        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
