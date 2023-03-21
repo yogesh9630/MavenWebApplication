@@ -45,8 +45,7 @@ jobs:
        sh my-script.sh
        pwd
        ls -l
-       cat my-script.sh
-       
+       cat testing.sh
        
     - name: Display Secret
       run: echo ${{ secrets.DEV }}
